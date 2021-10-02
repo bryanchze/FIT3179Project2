@@ -1,0 +1,27 @@
+h1{
+	font-weight: 600;
+	font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .pure-g{
+	margin-bottom: 100px;
+  }
+  .small-font{
+	  font-size: 14px;
+  }
+
+#choropleth_map {
+	font-family: 'Source Sans Pro', sans-serif;
+	 
+	left: 200px;
+	right: 500px;	
+}
+
+#bar_chart {
+	font-family: 'Source Sans Pro', sans-serif;
+	
+	left: 100px;
+	right: 200px;	
+}
+
+
