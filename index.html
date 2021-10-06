@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
 <head>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -22,21 +23,55 @@
   <style>
     h1 {text-align: center;}
     p {text-align: center;}
+    p.hidden {border-style: hidden;}
+    .center {
+      margin: auto;
+      width: 50%;
+      border: 3px hidden;
+      padding:
+       10px;
+    }
+    .middle {
+      margin: auto;
+      width: 30%;
+      border: 3px hidden;
+      padding: 10px;
+       text-align: center;
+    }
   </style>
 
 </head>
 <body>
-
   <div class="page">
      <!-- pure grid group -->
-     <div class="pure-g">
+     <div class="pure-g" id= "top_of_page">
       <div class="pure-u-1-1">
-        <h1>WORLD HAPPINESS</h1>
-        <p>Happiness is when one is in a state of well-being and contentment in what they are doing or in life in general.<br> The United Nations supplies articles and rankings of the happiness of each country based on the ratings of respondent’s lives correlating with various quality of life factors.</p>
+        <h1>HAPPINESS</h1>
+        <h2>AROUND THE WORLD</h2>
       </div>
      </div>
   <!-- end pure grid group -->
 
+  <div class="center" id="description">
+    <!-- pure grid group -->
+    <div class="pure-g" >
+      <div class="pure-u-1-1">
+        <p>Happiness is when one is in a state of well-being and contentment
+          in what they are doing or in life in general. If that is the case,
+          then it comes to no suprise that happiness varies in different
+          countries in the world. The United Nations supplies articles and
+          rankings of the happiness of each country based on the ratings of
+          respondent’s lives correlating with various quality of life
+          factors such as gross domestic product (GDP) per capita, social
+          security, freedom to make choices, generosity of the population,
+          health expectancy and perceptions of corruption.
+        </p>
+      </div>
+    </div>
+  </div>
+   <!-- end pure grid group -->
+
+  <!--Which countries are happier? --> 
   <!-- pure grid group -->
   <div class="pure-g">
       <div class="pure-u-2-3">
@@ -44,37 +79,202 @@
       </div>
   </div>
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-        <div class="pure-u-2-3">
-          <div id="bar_chart" class="vis-container"></div>
-        </div>
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-1-1">
+    <pre>  </pre> <pre>  </pre> <pre>  </pre>
+    <h2>HOW DOES THESE FACTORS AFFECT HAPPINESS 
+      <br>IN DIFFERENT COUNTRIES?
+    </h2>
+  </div>
+ </div>
+<!-- end pure grid group -->
+
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-2-3">
+    <div id="radial_plot" class="vis-container"></div>
+  </div>
+  <div class="pure-u-1-3">
+    <div class="description description-left" id="short" >
+      <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et
+        molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
     </div>
+  </div>
+</div>
+<!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <pre>  </pre>
+      <h2>HOW DOES HAPPINESS AND IT'S FACTORS VARY
+        <br>IN DIFFERENT REGIONS OF THE WORLD?</h2>
+    </div>
+   </div>
+<!-- end pure grid group -->
+
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-2-3">
+    <div id="bar_chart" class="vis-container"></div>
+  </div>
+  <div class="pure-u-1-3">
+    <div class="description description-left" >
+      <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et
+        molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+    </div>
+  </div>
+</div>
+<!-- end pure grid group -->
+
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="trellis_bar_chart" class="vis-container"></div>
+      </div>
+  </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h2>WHO ARE THE 10 HAPPIEST COUNTRIES 
+          <br> IN THE WORLD?</h2>
+      </div>
+     </div>
+  <!-- end pure grid group -->
+
+  <!-- pure grid group-->
+  <div class="pure-g">
+    <div class="pure-u-2-3">
+      <div id="bump_chart_top10" class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-3">
+    <div class="description description-left" >
+      <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et
+        molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+    </div>
+  </div>
+  </div> 
+  <!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <pre>  </pre>
+      <h2>WHAT ARE THE CHANGES IN HAPPINESS <br> OVER TIME?</h2>
+    </div>
+    </div>
+  <!-- end pure grid group -->
+
+    <!-- pure grid group-->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="line_chart" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-left" >
+          <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et
+            molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+        </div>
+      </div>
+    </div> 
     <!-- end pure grid group -->
+    
 
      <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1 small-font">
-        <p>This visualisation is created by <a href="https://www.kaggle.com/mathurinache" target="_blank">Mathurin Aché</a>. The datasource is <a href="https://www.kaggle.com/mathurinache/world-happiness-report" target="_blank">World Happiness Report up to 2020</href>.</p>
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h2>IS THERE A CORRELATION BETWEEN THESE FACTORS 
+        <br> AND THE HAPPINESS SCORE?</h2>
+    </div>
+    </div>
+  <!-- end pure grid group -->
+
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-2-3">
+    <div id="bar_chart" class="vis-container"></div>
+  </div>
+  <div class="pure-u-1-3">
+    <div class="description description-left" >
+      <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et
+        molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+    </div>
+    <div class="description description-right" >
+      <p>Similar to the previous section, but the colum partition is swapped. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien faucibus et
+        molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+    </div>
+  </div>
+</div>
+<!-- end pure grid group -->
+
+
+     <!-- pure grid group-->
+     <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="scatterplots" class="vis-container"></div>
+      </div>
+    </div> 
+    <!-- end pure grid group -->
+    
+    <div class="middle">
+      <!-- pure grid group -->
+      <div class="pure-g">
+        <div class="pure-u-1-1 small-font">
+          <pre>  </pre><pre>  </pre><pre>  </pre>
+          <p>The datasource is from <a href="https://www.kaggle.com/mathurinache/world-happiness-report" target="_blank">World Happiness Report up to 2020</href>.</p>
+        </div>
       </div>
     </div>
-     <!-- end pure grid group -->
+    
+
+    <!--"Spread love everywhere you go. Let no one ever come to you without leaving happier." —Mother Theresa--> 
 
   </div> <!-- end page -->
 
 <script type="text/javascript">
   var spec1 = "js/choropleth_map.vg.json";
-  var spec2 = "js/bar_chart.vg.json";
+  var spec2 = "js/trellis_bar_chart.vg.json";
+  var spec3 = "js/bar_chart.vg.json";
+  var spec4 = "js/radial_plot.vg.json";
+  var spec5 = "js/bump_chart_top10.vg.json";
+  var spec6 = "js/line_chart.vg.json";
+  var spec7 = "js/scatterplots.vg.json";
+
   vegaEmbed('#choropleth_map', spec1, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-  vegaEmbed('#bar_chart', spec2, {"actions": false}).then(function(result) {
+  vegaEmbed('#trellis_bar_chart', spec2, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+  vegaEmbed('#bar_chart', spec3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#radial_plot', spec4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#bump_chart_top10', spec5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#line_chart', spec6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  vegaEmbed('#scatterplots', spec7, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+
 </script>
 
-  
-  
 
 </body>
 
