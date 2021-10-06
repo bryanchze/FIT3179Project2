@@ -1,0 +1,98 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "#f2f3f7",
+    
+    "repeat": {
+      "row": ["Happiness Score"],
+      "column": ["Economy (GDP per Capita)", "Family", "Health (Life Expectancy)", "Freedom", "Trust (Government Corruption)"]
+    },
+    "spec": {
+        "data": {
+            "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled.csv"
+        }, 
+      "mark": "point",
+      "params": [
+       
+        {
+          "name": "brush",
+          "select": {
+            "type": "interval",
+            "resolve": "union",
+            "on": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
+            "translate": "[mousedown[event.shiftKey], window:mouseup] > window:mousemove!",
+            "zoom": "wheel![event.shiftKey]"
+          }
+        },
+        {
+          "name": "grid",
+          "select": {
+            "type": "interval",
+            "resolve": "global",
+            "translate": "[mousedown[!event.shiftKey], window:mouseup] > window:mousemove!",
+            "zoom": "wheel![!event.shiftKey]"
+          },
+          "bind": "scales"
+        }
+       
+      ],
+      "encoding": {
+        "x": {"field": {"repeat": "column"}, "type": "quantitative"},
+        "y": {
+          "field": {"repeat": "row"},
+          "type": "quantitative",
+          "axis": {"minExtent": 20}
+        },
+        "color": {
+          "condition": {
+            "param": "brush",
+            "field": "Country",
+            "type": "nominal","legend": null
+          },
+          "value": "grey"
+        },
+        "tooltip": [
+          {
+              "field": "Country",
+              "type": "nominal",
+              "title": "Country"
+          },
+          {
+              "field": "Happiness Score",
+              "type": "quantitative",
+              "format": ".2f",
+              "title": "Happiness Score"
+          }  
+              ]
+      }
+    },
+    "params": [
+      {
+        "name": "Year_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019
+          ],
+          "labels": [
+            "Show All",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019"
+          ],
+          "name": "Year: "
+        }, "value": "2015"
+      }
+    ],
+    "transform": [
+      {
+        "filter": "Year_selection == null || datum.Year == Year_selection"
+      }]
+  }
+  

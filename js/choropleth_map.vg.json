@@ -1,12 +1,13 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1000,
+    "width": 750,
     "height": 400,
     "config": {
         "view": {
             "stroke": "transparent"
         }
-    },
+    },"background": "#f2f3f7",
+    
     "data": {
         "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled.csv"
     },
@@ -21,16 +22,14 @@
           2016,
           2017,
           2018,
-          2019,
-          2020
+          2019
         ],
         "labels": [
           "2015",
           "2016",
           "2017",
           "2018",
-          "2019",
-          "2020"
+          "2019"
         ],
         "name": "Year: "
       }
@@ -65,7 +64,7 @@
             "type": "geojson"
         },"color": {
             "field": "Happiness Score",
-            "type": "quantitative","legend":{"orient":"top-right"}
+            "type": "quantitative","legend":{"orient":"bottom-left"}
         },
         "tooltip": [
             {

@@ -1,0 +1,74 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled%20long%20format.csv"
+  },"background": "#f2f3f7",
+  "params": [
+    {
+      "name": "Year_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019
+        ],
+        "labels": [
+          "Show All",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019"
+        ],
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Year_selection == null || datum.Year == Year_selection"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "mean",
+          "field": "Value",
+          "as": "average_score"
+        }
+      ],
+      "groupby": [
+        "Region","Factors"
+      ]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "column": {"field": "Factors"},
+    "x": {"field": "average_score", "type": "quantitative", "title": "Average Score", "aggregate": "mean","axis": {"grid": false}},
+    "y": {"field": "Region", "type": "nominal"},
+    "color": {"field": "Factors", "type": "nominal","legend": null},
+    "tooltip": [
+      {
+          "field": "Region",
+          "type": "nominal",
+          "title": "Region"
+      }, 
+      {
+        "field": "Factors",
+        "type": "nominal",
+        "title": "Factor"
+    } ,
+      {
+          "field": "average_score",
+          "type": "quantitative",
+          "format": ".2f",
+          "title": "Average Score"
+      }  
+          ]
+  }
+  }
+  

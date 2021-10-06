@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 400,
+ "background": "#f2f3f7",
+  "data": {
+    "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled.csv"
+  },
+  "transform": [{
+    "filter": "datum['Happiness Rank'] < 11"
+  }],
+  "mark": {"type": "line", "orient": "vertical","point": true},
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal"},
+    "y": {"field": "Happiness Rank", "type": "ordinal",
+    "sort": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+    "color": {
+      "field": "Country", "type": "nominal",
+      "scale": {
+        "domain": ["Switzerland", "Iceland", "Denmark", "Norway", "Canada", "Finland", "Netherlands", "Sweden", "New Zealand", "Australia"],
+        "range": ["black", "#127153", "#C91A3C", "#0C71AB", "#8856a7", "#fdbb84", "#dd1c77", "#d95f0e", "#F0A500","#CAD315"]
+      }
+    },
+    "tooltip": [
+        {
+            "field": "Country",
+            "type": "nominal",
+            "title": "Country"
+        },
+        {
+            "field": "Happiness Rank",
+            "type": "quantitative",
+            "title": "Happiness Rank"
+        }   
+            ]
+  }
+}

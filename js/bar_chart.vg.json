@@ -1,12 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 300,
-  "height": 150,
+  "width": 350,
+  "height": 200,
   "config": {
     "view": {
       "stroke": "transparent"
     }
-  },
+  },"background": "#f2f3f7",
   "data": {
     "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled.csv"
   },
@@ -21,8 +21,7 @@
           2016,
           2017,
           2018,
-          2019,
-          2020
+          2019
         ],
         "labels": [
           "Show All",
@@ -30,8 +29,7 @@
           "2016",
           "2017",
           "2018",
-          "2019",
-          "2020"
+          "2019"
         ],
         "name": "Year: "
       }
@@ -66,7 +64,7 @@
       "aggregate": "average",
       "field": "average_score",
       "type": "quantitative",
-      "title": "Average Score",
+      "title": "Average Happiness Score",
       "axis": {
         "grid": false
       }
