@@ -1,7 +1,14 @@
 body {background-color: #f2f3f7;
 	font-family: 'Lora', serif;
 }
-
+.header img {
+	float: right;
+	width: 140px;
+	height: 140px;
+	margin-top: -40px;
+	margin-right: 290px;
+	
+  }
 h1{
 	font-weight: 400;
 	background-color: #DCE1E3;
@@ -26,12 +33,15 @@ h2{
 	font-family: 'Montserrat', sans-serif;
 	margin-top: 50px;
 	text-align: justify;
+	position: relative;
+	margin-left: 190px;
   }
   h5{
 	font-weight: normal;
 	font-family: 'Montserrat', sans-serif;
 	margin-top: -10px;
 	text-align: justify;
+	margin-left: 190px;
   }
 
 
@@ -86,7 +96,7 @@ p{
 #choropleth_map {
 	font-family: 'Lora', serif;
 	 
-	left: 385px;
+	left: 305px;
 	right: 500px;	
 }
 
