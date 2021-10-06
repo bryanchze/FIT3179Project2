@@ -50,7 +50,8 @@
     "column": {"field": "Factors"},
     "x": {"field": "average_score", "type": "quantitative", "title": "Average Score", "aggregate": "mean","axis": {"grid": false}},
     "y": {"field": "Region", "type": "nominal"},
-    "color": {"field": "Factors", "type": "nominal","legend": null},
+    "color": {"field": "Factors", "type": "nominal","legend": null,
+    "scale": {"range": ["#a3cce9", "#fc7d0b", "#57606c", "#c85200", "#CC79A7", "#ffbc79"]}},
     "tooltip": [
       {
           "field": "Region",
