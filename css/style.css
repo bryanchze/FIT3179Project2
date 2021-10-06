@@ -1,27 +1,115 @@
+body {background-color: #f2f3f7;
+	font-family: 'Lora', serif;
+}
+
 h1{
-	font-weight: 600;
-	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	background-color: #DCE1E3;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 120px;
+  }
+h2{
+	font-weight: 100;
+	background-color: #DCE1E3;
+	font-size: 35px;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: -85px;
   }
 
-  .pure-g{
-	margin-bottom: 100px;
-  }
-  .small-font{
-	  font-size: 14px;
-  }
+p{
+	margin-top: -90px;
+	font-size: 17px;
+	text-align: justify;
+ }
+ 
+.pure-g{
+margin-bottom: 100px;
+
+}
+.small-font{
+	font-size: 14px;
+	text-align: center;
+}
+
+#top_of_page{
+	background-color: #DCE1E3;
+
+}
+
+#short{
+	padding-right: 920px;
+	margin-left: -730px;
+	margin-top: 70px;
+}
+
+.description-right {
+	padding-right: 300px;
+	margin-left: -230px;
+	margin-top: -134px;
+}
+
+.description-left {
+    padding-right: 800px;
+	margin-left: -730px;
+	margin-top: 70px;
+}
 
 #choropleth_map {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Lora', serif;
 	 
-	left: 200px;
+	left: 385px;
 	right: 500px;	
 }
 
 #bar_chart {
-	font-family: 'Source Sans Pro', sans-serif;
-	
-	left: 100px;
-	right: 200px;	
+	font-family: 'Lora', serif;
+	 
+	left: 800px;
+	right: 100px;	
+	bottom: 80px;
 }
 
 
+#trellis_bar_chart {
+	font-family: 'Lora', serif;
+	
+	left: 50px;
+	right: 200px;	
+	bottom: 115px;
+}
+
+
+#scatterplots {
+	font-family: 'Lora', serif;
+	 
+	left: 120px;
+	right: 500px;	
+}
+
+#radial_plot{
+	font-family: 'Lora', serif;
+	 
+	left: 600px;
+	right: 100px;	
+	bottom: 80px;
+}
+
+#bump_chart_top10{
+	font-family: 'Lora', serif;
+	 
+	left: 800px;
+	right: 100px;	
+	bottom: 80px;
+}
+
+#line_chart{
+	font-family: 'Lora', serif;
+	 
+	left: 800px;
+	right: 100px;	
+	bottom: 80px;
+}
