@@ -76,7 +76,7 @@ p{
 	
 }
 #short{
-	padding-right: 920px;
+	padding-right: 870px;
 	margin-left: -730px;
 	margin-top: 70px;
 }
@@ -84,20 +84,21 @@ p{
 .description-right {
 	padding-right: 300px;
 	margin-left: -230px;
-	margin-top: -134px;
+	margin-top: -209px;
 }
 
 .description-left {
     padding-right: 800px;
 	margin-left: -730px;
-	margin-top: 70px;
+	margin-top: 35px;
 }
 
 #choropleth_map {
 	font-family: 'Lora', serif;
 	 
 	left: 305px;
-	right: 500px;	
+	right: 500px;
+	margin-top: -40px;	
 }
 
 #bar_chart {
@@ -105,7 +106,7 @@ p{
 	 
 	left: 800px;
 	right: 100px;	
-	bottom: 80px;
+	bottom: 55px;
 }
 
 
@@ -114,7 +115,8 @@ p{
 	
 	left: 50px;
 	right: 200px;	
-	bottom: 115px;
+	bottom: -90px;
+	top: -80px;
 }
 
 
@@ -128,9 +130,9 @@ p{
 #radial_plot{
 	font-family: 'Lora', serif;
 	 
-	left: 600px;
+	left: 650px;
 	right: 100px;	
-	bottom: 80px;
+	bottom: 50px;
 }
 
 #bump_chart_top10{
@@ -138,7 +140,7 @@ p{
 	 
 	left: 800px;
 	right: 100px;	
-	bottom: 80px;
+	bottom: 55px;
 }
 
 #line_chart{
