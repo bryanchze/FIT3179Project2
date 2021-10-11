@@ -3,6 +3,13 @@
   "data": {
     "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled%20long%20format.csv"
   },"background": "#f2f3f7",
+  "config": {
+    "axis": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "legend": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "header": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
+    "mark": {"font": "Open Sans"},
+    "title": {"font": "Open Sans", "subtitleFont": "Open Sans"}
+  },
   "params": [
     {
       "name": "Year_selection",
