@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 700,
-  "height": 350,
+  "height": 400,
   "config": {
     "view": {
       "stroke": "transparent"
@@ -16,6 +16,7 @@
         "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled%20long%20format.csv"
     }, 
     "params": [
+      
         {
           "name": "Country_selection",
           "bind": {

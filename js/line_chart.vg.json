@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 400,
-    "height": 250,
+    "width": 500,
+    "height": 300,
     "config": {
       "axis": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
       "legend": {"labelFont": "Open Sans", "titleFont": "Open Sans"},

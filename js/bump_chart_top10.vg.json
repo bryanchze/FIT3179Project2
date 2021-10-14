@@ -1,44 +1,145 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 300,
-  "height": 400, 
+  "width": 400,
+  "height": 500,
   "config": {
-    "axis": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
-    "legend": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
-    "header": {"labelFont": "Open Sans", "titleFont": "Open Sans"},
-    "mark": {"font": "Open Sans"},
-    "title": {"font": "Open Sans", "subtitleFont": "Open Sans"}
+    "axis": {
+      "labelFont": "Open Sans",
+      "titleFont": "Open Sans"
+    },
+    "legend": {
+      "labelFont": "Open Sans",
+      "titleFont": "Open Sans"
+    },
+    "header": {
+      "labelFont": "Open Sans",
+      "titleFont": "Open Sans"
+    },
+    "mark": {
+      "font": "Open Sans"
+    },
+    "title": {
+      "font": "Open Sans",
+      "subtitleFont": "Open Sans"
+    }
   },
- "background": "#f2f3f7",
+  "background": "#f2f3f7",
   "data": {
     "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled.csv"
   },
-  "transform": [{
-    "filter": "datum['Happiness Rank'] < 11"
-  }],
-  "mark": {"type": "line", "orient": "vertical","point": true},
-  "encoding": {
-    "x": {"field": "Year", "type": "ordinal"},
-    "y": {"field": "Happiness Rank", "type": "ordinal",
-    "sort": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
-    "color": {
-      "field": "Country", "type": "nominal",
-      "scale": {
-        "domain": ["Switzerland", "Iceland", "Denmark", "Norway", "Canada", "Finland", "Netherlands", "Sweden", "New Zealand", "Australia"],
-        "range": ["black", "#127153", "#C91A3C", "#0C71AB", "#8856a7", "#fdbb84", "#dd1c77", "#d95f0e", "#F0A500","#CAD315"]
-      }
+  "transform": [
+    {
+      "filter": "datum['Happiness Rank'] < 11"
+    }
+  ],
+  "params": [
+    {
+      "name": "country_highlight",
+      "select": {
+        "type": "point",
+        "fields": [
+          "Country"
+        ]
+      },
+      "bind": "legend"
+    },{
+      "name": "highlight",
+      "select": {"type": "point", "on": "mouseover"}
     },
-    "tooltip": [
+    {"name": "select", "select": "point"}
+  ],
+  "mark": {
+    "type": "line",
+    "orient": "vertical",
+    "point": true,
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "Happiness Rank",
+      "type": "ordinal",
+      "sort": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },"fillOpacity": {
+      "condition": {"param": "select", "value": 2},
+      "value": 0.3
+    },
+    "strokeWidth": {
+      "condition": [
         {
-            "field": "Country",
-            "type": "nominal",
-            "title": "Country"
+          "param": "select",
+          "value": 2
         },
         {
-            "field": "Happiness Rank",
-            "type": "quantitative",
-            "title": "Happiness Rank"
-        }   
-            ]
+          "param": "highlight",
+          
+          "value": 0.5
+        }
+      ],
+      "value": 0
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Switzerland",
+          "Iceland",
+          "Denmark",
+          "Norway",
+          "Canada",
+          "Finland",
+          "Netherlands",
+          "Sweden",
+          "New Zealand",
+          "Australia"
+        ],
+        "range": [
+          "black",
+          "#127153",
+          "#C91A3C",
+          "#0C71AB",
+          "#8856a7",
+          "#fdbb84",
+          "#dd1c77",
+          "#d95f0e",
+          "#F0A500",
+          "#CAD315"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {
+        "param": "country_highlight",
+        "value": 1.0
+      },
+      "value": 0.2
+    },
+    "tooltip": [
+      {
+        "field": "Country",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "Happiness Rank",
+        "type": "quantitative",
+        "title": "Happiness Rank"
+      }
+    ]
   }
 }

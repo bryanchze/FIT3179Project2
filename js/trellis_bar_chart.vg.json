@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 150,
   "data": {
     "url": "https://raw.githubusercontent.com/bryanchze/FIT3179Project2/main/data/world_happiness_compiled%20long%20format.csv"
   },"background": "#f2f3f7",
@@ -58,7 +59,7 @@
     "x": {"field": "average_score", "type": "quantitative", "title": "Average Score", "aggregate": "mean","axis": {"grid": false}},
     "y": {"field": "Region", "type": "nominal"},
     "color": {"field": "Factors", "type": "nominal","legend": null,
-    "scale": {"range": ["#a3cce9", "#fc7d0b", "#57606c", "#c85200", "#CC79A7", "#ffbc79"]}},
+    "scale": {"range": ["#E69F00", "#56B4E9", "#009E73", "#D55E00", "#CC79A7", "#0072B2"]}},
     "tooltip": [
       {
           "field": "Region",
